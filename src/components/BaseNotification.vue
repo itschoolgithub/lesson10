@@ -4,15 +4,22 @@
             <img src="../assets/icons/icon-1.svg" alt="">
         </div>
         <div class="notification__info">
-            <h3>Someting wrong</h3>
-            <p>Lorem ipsum dolor sit amet</p>
+            <h3>{{ title }}</h3>
+            <p>{{ text }}</p>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'BaseNotification'
+        name: 'BaseNotification',
+        data() {
+            return {
+                title: 'Someting wrong',
+                text: 'Lorem ipsum dolor sit amet',
+                
+            }
+        }
     }
 </script>
 

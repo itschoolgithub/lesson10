@@ -1,5 +1,8 @@
 <template>
   <BaseNotification />
+  <BaseNotification />
+  <BaseNotification />
+  <BaseNotification />
 </template>
 
 
