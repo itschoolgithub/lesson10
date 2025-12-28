@@ -2,9 +2,14 @@
     <div
         class="notification"
         :class="notificationClass"
+        v-if="isActive"
+        @click="onClick"
     >
         <div class="notification__icon">
-            <img :src="notificationImage" alt="">
+            <img
+                :src="notificationImage"
+                alt=""
+            >
         </div>
         <div class="notification__info">
             <h3>{{ title }}</h3>
@@ -17,7 +22,7 @@
     export default {
         name: 'BaseNotification',
         props: [
-            "title", "text", 'type'
+            "title", "text", 'type', 'isActive'
         ],
         data() {
             return {
@@ -29,6 +34,11 @@
             },
             notificationImage() {
                 return 'icon-' + this.type + '.svg';
+            }
+        },
+        methods: {
+            onClick() {
+                this.$emit('clickOnNotification')
             }
         }
     }
