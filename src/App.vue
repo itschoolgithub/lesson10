@@ -1,7 +1,13 @@
 <template>
   <div class="container">
     <div class="items">
-      <BaseNotification />
+      <BaseNotification
+        v-for="(notification, index) in notifications"
+        :key="index"
+        :title="notification.title"
+        :text="notification.text"
+        :type="notification.type"
+      />
     </div>
   </div>
 </template>
@@ -13,6 +19,32 @@
     name: "App",
     components: {
       BaseNotification
+    },
+    data() {
+      return {
+        notifications: [
+          {
+            title: 'Someting wrong',
+            text: 'Lorem ipsum dolor sit amet',
+            type: 'danger'
+          },
+          {
+            title: 'Need Attention',
+            text: 'Adipiscing elit, sed do eiusmod',
+            type: 'warning'
+          },
+          {
+            title: 'Success',
+            text: 'consectetur adipiscing elit sed',
+            type: 'success'
+          },
+          {
+            title: 'Other Condition',
+            text: 'consectetur adipiscing elit sed',
+            type: 'info'
+          }
+        ]
+      }
     }
   }
 </script>

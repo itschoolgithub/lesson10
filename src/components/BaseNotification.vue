@@ -1,7 +1,10 @@
 <template>
-    <div class="notification notification--danger">
+    <div
+        class="notification"
+        :class="notificationClass"
+    >
         <div class="notification__icon">
-            <img src="@/assets/icons/icon-1.svg" alt="">
+            <img :src="notificationImage" alt="">
         </div>
         <div class="notification__info">
             <h3>{{ title }}</h3>
@@ -13,11 +16,19 @@
 <script>
     export default {
         name: 'BaseNotification',
+        props: [
+            "title", "text", 'type'
+        ],
         data() {
             return {
-                title: 'Someting wrong',
-                text: 'Lorem ipsum dolor sit amet',
-                
+            }
+        },
+        computed: {
+            notificationClass() {
+                return 'notification--' + this.type;
+            },
+            notificationImage() {
+                return 'icon-' + this.type + '.svg';
             }
         }
     }
