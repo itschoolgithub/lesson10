@@ -1,7 +1,7 @@
 <template>
     <div class="notification notification--danger">
         <div class="notification__icon">
-            <img src="../assets/icons/icon-1.svg" alt="">
+            <img src="@/assets/icons/icon-1.svg" alt="">
         </div>
         <div class="notification__info">
             <h3>{{ title }}</h3>
