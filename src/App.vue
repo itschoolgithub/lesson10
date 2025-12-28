@@ -4,26 +4,31 @@
       <BaseNotification
         v-for="(notification, index) in notifications"
         :key="index"
-        :title="notification.title"
         :text="notification.text"
         :type="notification.type"
         :isActive="notification.isActive"
         @clickOnNotification="notifications[index].isActive = false"
-      />
+      >
+      <h3>{{ notification.title }}</h3>
+    </BaseNotification>
     </div>
     <button
       @click="addNotification"
     >Добавить новое уведомление</button>
+
+    <BaseActivity></BaseActivity>
   </div>
 </template>
 
 <script>
   import BaseNotification from '@/components/BaseNotification.vue';
+  import BaseActivity from '@/components/BaseActivity.vue';
 
   export default {
     name: "App",
     components: {
-      BaseNotification
+      BaseNotification,
+      BaseActivity
     },
     data() {
       return {
